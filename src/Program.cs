@@ -5,6 +5,17 @@ using System.IO;
 namespace GoormIDE_test{
 	
 	//입출력 관련 변수
+	/*
+	public class FileIO{
+		public void WriteData(){
+			
+		}
+		
+		public void ReadData(){
+			
+		}
+	}
+	*/
 	
 	//변함없는 상수
 	public class ConstValue{
@@ -18,7 +29,7 @@ namespace GoormIDE_test{
 		public const string Name10 = "사          라          헬";
 		
 		
-		public const string Version = "0.0.1";
+		public const string Version = "0.0.0";
 		
 		public const int Delayms = 20;
 	}
@@ -130,6 +141,16 @@ namespace GoormIDE_test{
 		}
 	}
 	
+	
+	//선택 함수
+	/*
+	public class Selection{
+		public void UpDown(){
+		
+		}
+	}
+	*/
+	
 	static class Program{
 		static void Main(){
 			//콘솔 초기 설정
@@ -141,7 +162,7 @@ namespace GoormIDE_test{
 			Console.Clear();
 			
 			//프로그램 시작
-			Tittle Ttl = new Title();
+			Title Ttl = new Title();
 			
 			Ttl.Run();
 		}

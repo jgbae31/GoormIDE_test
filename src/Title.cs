@@ -7,6 +7,8 @@ namespace GoormIDE_test{
 		Print Prt = new Print();
 		
 		private void MainTitle(){
+			Console.Clear();
+			
 			Prt.Left("Version : "+ConstValue.Version, 2, 1);
 			Prt.Center(ConstValue.Name10, 5);
 			Prt.Center("처음부터", ConstValue.WinSizeY-10);
@@ -59,20 +61,38 @@ namespace GoormIDE_test{
 		
 		public void Run(){
 			bool RunProgram = true;
+			ConsoleKeyInfo a = default(ConsoleKeyInfo);
 			
 			while(RunProgram){
 				MainTitle();
+				a = default(ConsoleKeyInfo);
 				
 				switch(Selection(0)){
-				case 0:
-					RunProgram = true;
-					break;
-				case 1:
-					RunProgram = true;
-					break;
-				default:
-					RunProgram = false;
-					break;
+					case 0:
+						Intro Itr = new Intro();
+						Itr.Run();
+						//CreateUser CrtUsr = new CreateUser();
+						//CrtUser();
+						
+						DisplayPrint.GameDisplay();
+						
+						RunProgram = true;
+						a = Console.ReadKey(true);
+						break;
+					case 1:
+						LoadUser LdUsr = new LoadUser();
+						
+						if(LdUsr.Run()){
+							DisplayPrint.GameDisplay();
+						
+							RunProgram = true;
+							a = Console.ReadKey(true);	
+						}
+						break;
+					default:
+						Console.Clear();
+						RunProgram = false;
+						break;
 				}
 			}
 		}

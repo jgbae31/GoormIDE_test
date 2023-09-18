@@ -4,5 +4,8 @@ using System.IO;
 
 namespace GoormIDE_test{
 	public class CreateUser{
+		public void Run(){
+			
+		}
 	}
 }

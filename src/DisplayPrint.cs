@@ -77,5 +77,40 @@ namespace GoormIDE_test{
 			UserInfo();
 			ScriptsWindow();
 		}
+		
+		public static void HideUserInfo(int j){
+			switch(j){
+				case 0:
+					Prt.Left("                            ", 3, 2);
+					break;
+				case 1:
+					Prt.Left("                            ", 3, 4);
+					break;
+				case 2:
+					Prt.Left("                            ", 3, 5);
+					break;
+				case 3:
+					Prt.Left("                            ", 3, 6);
+					break;
+				case 4:
+					Prt.Left("                            ", 3, 7);
+					break;
+				case 5:
+					Prt.Left("                            ", 3, 8);
+					break;
+				case 6:
+					for(int i = 10; i < 16; i++) Prt.Left("                            ", 3, i);
+					break;
+				case 7:
+					for(int i = 17; i < 28; i++) Prt.Left("                            ", 3, i);
+					break;
+				case 8:
+					for(int i = 29; i < 37; i++) Prt.Left("                            ", 3, i);
+					break;
+				case 9:
+					for(int i = 38; i < 49; i++) Prt.Left("                            ", 3, i);
+					break;
+			}
+		}
 	}
 }

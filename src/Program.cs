@@ -4,19 +4,6 @@ using System.IO;
 
 namespace GoormIDE_test{
 	
-	//입출력 관련 변수
-	/*
-	public class FileIO{
-		public void WriteData(){
-			
-		}
-		
-		public void ReadData(){
-			
-		}
-	}
-	*/
-	
 	//선택 함수
 	/*
 	public class Selection{

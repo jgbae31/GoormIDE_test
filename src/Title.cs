@@ -72,9 +72,7 @@ namespace GoormIDE_test{
 						Intro Itr = new Intro();
 						Itr.Run();
 						//CreateUser CrtUsr = new CreateUser();
-						//CrtUser();
-						
-						DisplayPrint.GameDisplay();
+						//CrtUser.Run();
 						
 						RunProgram = true;
 						a = Console.ReadKey(true);

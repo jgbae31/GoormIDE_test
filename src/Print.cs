@@ -13,10 +13,10 @@ namespace GoormIDE_test{
 			Console.Write(Str);
 		}
 		
-		public void Center(string Str, int X, int Y){
+		public void Center(string Str, int X1, int X2, int Y){
 			int ByteSize = System.Text.Encoding.Default.GetByteCount(Str);
 			
-			Console.SetCursorPosition( X + (ConstValue.WinSizeX - X)/2 - (ByteSize)/2, Y);
+			Console.SetCursorPosition( X1 + (X2 - X1)/2 - (ByteSize)/2, Y);
 			
 			Console.Write(Str);
 		}
@@ -35,10 +35,21 @@ namespace GoormIDE_test{
 			Console.Write(Str);
 		}
 		
-		public void DelayCenter(string Str, int X, int Y, int ms){
+		public void DelayCenter(string Str, int Y, int ms){
 			int ByteSize = System.Text.Encoding.Default.GetByteCount(Str);
 			
-			Console.SetCursorPosition( X + (ConstValue.WinSizeX - X)/2 - (ByteSize)/2, Y);
+			Console.SetCursorPosition((ConstValue.WinSizeX - ByteSize)/2, Y);
+			
+			for(int i = 0; i < Str.Length; i++){
+				Console.Write(Str[i]);
+				Thread.Sleep(ms);
+			}
+		}
+		
+		public void DelayCenter(string Str, int X1, int X2, int Y, int ms){
+			int ByteSize = System.Text.Encoding.Default.GetByteCount(Str);
+			
+			Console.SetCursorPosition(X1 + (X2 - X1)/2 - (ByteSize)/2, Y);
 			
 			for(int i = 0; i < Str.Length; i++){
 				Console.Write(Str[i]);
@@ -78,10 +89,10 @@ namespace GoormIDE_test{
 			
 		}
 		
-		public void DelayCenter(string Str, int X, int Y){
+		public void DelayCenter(string Str, int X1, int X2, int Y){
 			int ByteSize = System.Text.Encoding.Default.GetByteCount(Str);
 			
-			Console.SetCursorPosition( X + (ConstValue.WinSizeX - X)/2 - (ByteSize)/2, Y);
+			Console.SetCursorPosition(X1 + (X2 - X1)/2 - (ByteSize)/2, Y);
 			
 			for(int i = 0; i < Str.Length; i++){
 				Console.Write(Str[i]);

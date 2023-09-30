@@ -24,8 +24,8 @@ namespace Sarahel{
 						RunProgram = true;
 						break;
 					case 1:
-						//GameStart.LoadPlayer();
-						//GameStart.Run();
+						GameStart.LoadPlayer();
+						GameStart.Run();
 						RunProgram = true;
 						break;
 					default :

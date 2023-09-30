@@ -145,32 +145,38 @@ namespace Sarahel{
 		public static bool Load(string File, string pw){
 			string Path = "/workspace/GoormIDE_test/save/";
 			
-			string[] SaveData = System.IO.File.ReadAllLines(Path+File);
-			
-			if(SaveData[0] == pw){
-				Progress = Convert.ToInt32(SaveData[1]);
-				Name = SaveData[2];
-				MaxHP = Convert.ToInt32(SaveData[3]);
-				HP = Convert.ToInt32(SaveData[4]);
-				Money = Convert.ToInt32(SaveData[5]);
-				Job = Convert.ToInt32(SaveData[6]);
-				Persona = Convert.ToInt32(SaveData[7]);
+			if(System.IO.File.Exists(Path+File)){
+				string[] SaveData = System.IO.File.ReadAllLines(Path+File);
 				
-				string[] Data0 = SaveData[8].Split(',');
-				for(int i = 0; i < Data0.Length; i++) Status[i] = Convert.ToInt32(Data0[i]);
+				if(SaveData[0] == pw){
+					Progress = Convert.ToInt32(SaveData[1]);
+					Name = SaveData[2];
+					MaxHP = Convert.ToInt32(SaveData[3]);
+					HP = Convert.ToInt32(SaveData[4]);
+					Money = Convert.ToInt32(SaveData[5]);
+					Job = Convert.ToInt32(SaveData[6]);
+					Persona = Convert.ToInt32(SaveData[7]);
+					
+					string[] Data0 = SaveData[8].Split(',');
+					for(int i = 0; i < Data0.Length; i++) Status[i] = Convert.ToInt32(Data0[i]);
+					
+					string[] Data1 = SaveData[9].Split(',');
+					for(int i = 0; i < Data1.Length; i++) Property[i] = Data1[i];
+					
+					string[] Data2 = SaveData[10].Split(',');
+					for(int i = 0; i < Data2.Length; i++) Tool[i] = Data2[i];
+					
+					string[] Data3 = SaveData[11].Split(',');
+					for(int i = 0; i < Data3.Length; i++) Keyword[i] = Data3[i];
+					
+					GameGoal = SaveData[12];
+					
+					return false;
+				}
+				else{
+					return true;
+				}
 				
-				string[] Data1 = SaveData[9].Split(',');
-				for(int i = 0; i < Data1.Length; i++) Property[i] = Data1[i];
-				
-				string[] Data2 = SaveData[10].Split(',');
-				for(int i = 0; i < Data2.Length; i++) Tool[i] = Data2[i];
-				
-				string[] Data3 = SaveData[11].Split(',');
-				for(int i = 0; i < Data3.Length; i++) Keyword[i] = Data3[i];
-				
-				GameGoal = SaveData[12];
-				
-				return false;
 			}
 			else{
 				return true;

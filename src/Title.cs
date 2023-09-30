@@ -4,6 +4,7 @@ using System.IO;
 namespace Sarahel{
 	public static class Title{
 		private static void DisplayTitle(){
+			Print.Left("Version : "+ConstValue.CallVersion("Version"), 0, 0);
 			Print.Center(ConstValue.CallGameName("0", 8), 10);
 		}
 		
@@ -24,8 +25,7 @@ namespace Sarahel{
 						RunProgram = true;
 						break;
 					case 1:
-						GameStart.LoadPlayer();
-						GameStart.Run();
+						if(GameStart.LoadPlayer()) GameStart.Run();
 						RunProgram = true;
 						break;
 					default :

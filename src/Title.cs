@@ -18,9 +18,14 @@ namespace Sarahel{
 				
 				switch(Display.Sclt_Updown(File.ReadAllLines("/workspace/GoormIDE_test/script/Title/Title"), 0, ConstValue.CallWinSize("X"), ConstValue.CallWinSize("Y")-10)){
 					case 0:
+						GameStart.Intro();
+						//GameStart.CreatePlayer();
+						//GameStart.Run();
 						RunProgram = true;
 						break;
 					case 1:
+						//GameStart.LoadPlayer();
+						//GameStart.Run();
 						RunProgram = true;
 						break;
 					default :

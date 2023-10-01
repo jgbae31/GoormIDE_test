@@ -54,6 +54,14 @@ namespace Sarahel{
 			}
 		}
 		
+		public static void Change(string Type, int St, int i){
+			switch(Type){
+				case "Status":
+					Status[i] = St;
+					break;
+			}
+		}
+		
 		/*
 		public static void Remove(string Type, string Str){
 			switch(Type){
@@ -69,6 +77,17 @@ namespace Sarahel{
 		
 		public static void Add(string Type, string Str){
 			switch(Type){
+				case "HP":
+					HP += Convert.ToInt32(Str);
+					if(HP > MaxHP) HP = MaxHP;
+					break;
+				case "MaxHP":
+					MaxHP += Convert.ToInt32(Str);
+					if(HP > MaxHP) HP = MaxHP;
+					break;
+				case "Money":
+					Money += Convert.ToInt32(Str);
+					break;
 				case "Property":
 					for(int i = 0; i < 10; i++){
 						if(Property[i] == null){
@@ -100,22 +119,16 @@ namespace Sarahel{
 			switch(Type){
 				case "Progress":
 					return String.Format("{0:000}", Progress);
-					break;
 				case "Name":
 					return Name;
-					break;
 				case "Health":
 					return String.Format("{0:00}", HP) + "/" + String.Format("{0:00}", MaxHP);
-					break;
 				case "Money":
 					return String.Format("{0:000}", Money);
-					break;
 				case "Job":
 					return Jobs[Job];
-					break;
 				case "Persona":
 					return Personas[Persona];
-					break;
 				case "GameGoal":
 					return GameGoal;
 			}
@@ -127,19 +140,30 @@ namespace Sarahel{
 			switch(Type){
 				case "Status":
 					return String.Format("{0:00}", Status[i]);
-					break;
 				case "Property":
 					return Property[i];
-					break;
 				case "Tool":
 					return Tool[i];
-					break;
 				case "Keyword":
 					return Keyword[i];
-					break;
 			}
 			
 			return "Error";
+		}
+		
+		public static void Reset(){
+		Progress = 0;	
+		Name = null;	
+		MaxHP = 0;
+		HP = 0;
+		Money = 0;	
+		Job = 0;	
+		Persona = 0;	
+		for(int i = 0; i < 5; i++) Status[i] = 0;	
+		for(int i = 0; i < 10; i++) Property[i] = null;	
+		for(int i = 0; i < 6; i++) Tool[i] = null;	
+		for(int i = 0; i < 10; i++) Keyword[i] = null;	
+		GameGoal = null;
 		}
 		
 		public static bool Load(string File, string pw){

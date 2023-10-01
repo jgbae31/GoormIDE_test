@@ -20,25 +20,16 @@ namespace Sarahel{
 			
 			for(int i = 0; i < Script.Length; i++){
 				Print.DelayCenter(ConstValue.CallDelayms("Text"), Script[i], 36, ConstValue.CallWinSize("X")-1, 3+i);
-				if(Convert.ToInt32(Keybuffer[i]) == 1)  a = Console.ReadKey(true);
-				Thread.Sleep(500);
+				if(Convert.ToInt32(Keybuffer[i]) == 1) a = Console.ReadKey(true);
 			}
 			
 		}
-		
-		/*
-		public static void CreatePlayer(){
-			
-		}
-		*/
 		
 		public static bool LoadPlayer(){
 			string id;
 			string pw;
 			
 			string[] Sclt_Scripts = new string[2] {"불러오기", "돌아가기"};
-			
-			ConsoleKeyInfo a = default(ConsoleKeyInfo);
 			
 			do{
 				Console.Clear();
@@ -57,7 +48,7 @@ namespace Sarahel{
 				Print.Center("불러오기", ConstValue.CallWinSize("Y")-8);
 				Console.ForegroundColor = ConsoleColor.Black;
 				
-				if(Display.Sclt_Updown(Sclt_Scripts, 0, ConstValue.CallWinSize("X"), ConstValue.CallWinSize("Y")-8) == 1) return false;
+				if(Display.Sclt_UpDown(Sclt_Scripts, 0, ConstValue.CallWinSize("X"), ConstValue.CallWinSize("Y")-8) != 0) return false;
 				
 			}while(PlayerInfo.Load(id, pw));
 			
